@@ -1,0 +1,42 @@
+version: "3.3"
+services:
+  laravel_db:
+    container_name: laravel_db
+    image: mysql:5.7.22
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+        MYSQL_DATABASE: laravel
+        MYSQL_USER: anshu
+        MYSQL_PASSWORD: linux
+        MYSQL_ROOT_PASSWORD: root
+    ports:
+       - "3034:3306"
+  laravel:
+    container_name: laravel
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+            - .:/var/www/html/
+            - ./laravel.conf:/etc/apache2/sites-available/default
+            - ./access.log:/var/log/nginx/access.log
+            - ./error.log:/var/log/nginx/error.log
+    ports:
+            - "85:80"
+    links:
+      - laravel_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  laravel_pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: laravel_pma
+    links:
+      - laravel_db
+    environment:
+       PMA_HOST: laravel_db
+       PMA_PORT: 3306
+       PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 82:80
