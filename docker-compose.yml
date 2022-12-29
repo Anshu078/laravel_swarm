@@ -3,8 +3,6 @@ services:
   laravel_db:
     container_name: laravel_db
     image: mysql:5.7.22
-    volumes:
-      - ./mysql:/var/lib/mysql
     environment:
         MYSQL_DATABASE: laravel
         MYSQL_USER: anshu
