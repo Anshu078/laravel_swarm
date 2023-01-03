@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ date('Y-m-d) }}
+                    {{ date('d-m-y) }}
                 </div>
 
                 <div class="links">
