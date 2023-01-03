@@ -1,4 +1,5 @@
 FROM php:7.2-apache
+COPY laravel.conf /etc/apache2/sites-available/000-default.conf
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
