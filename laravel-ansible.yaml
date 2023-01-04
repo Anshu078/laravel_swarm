@@ -14,9 +14,9 @@
       # name: docker
        #state: started
 
-    #- name: Install docker python module
-     # pip:
-      # name: docker
+    - name: Install docker python module
+      pip:
+       name: docker
     
     - name: Remove all but selected list of containers
       docker_network:
