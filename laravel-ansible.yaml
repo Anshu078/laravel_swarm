@@ -17,7 +17,14 @@
     - name: Install docker python module
       pip:
        name: docker
-
+    
+    - name: Remove all but selected list of containers
+      docker_network:
+         name: php-demo
+         connected:
+           - docker-pipeline
+           
+           
     - name: Create Application container
       docker_container:
         name: docker-pipeline
