@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ date('d-m-y) }}
+                     ANSHU MARIA
                 </div>
 
                 <div class="links">
