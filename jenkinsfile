@@ -1,9 +1,9 @@
 def containerName="cargoflare"
 def tag="v1.1"
-def gitURL="https://github.com/technocratshorizons/cargo-flare-webapp.git"
+def gitURL="https://github.com/Anshu078/laravel_swarm.git"
 node {
     stage('CHECKOUT') {
-        checkout([$class: 'GitSCM', branches: [[name: '*/deployment']], extensions: [], userRemoteConfigs: [[credentialsId: 'cargoflare-front-app', url: 'https://github.com/technocratshorizons/cargo-flare-webapp.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/deployment']], extensions: [], userRemoteConfigs: [[credentialsId: 'cargoflare-front-app', url: 'https://github.com/Anshu078/laravel_swarm.git']]])
     }
     stage('IMAGE PRUNE') {
         sh "docker image prune -f"
@@ -28,7 +28,7 @@ node {
     }*/
 	
 	stage("DEPLOYMENT"){
-        playbook: 'cargoflare.yaml'
-        sh 'ansible-playbook cargoflare.yaml'
+        playbook: 'laravel-ansible.yaml'
+        sh 'ansible-playbook laravel-ansible.yaml'
     }
 }

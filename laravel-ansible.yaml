@@ -9,27 +9,38 @@
         name: python3-pip, docker.io
         state: present
 
-    #- name: Start docker service
-     # service:
-      # name: docker
-       #state: started
+    - name: Start docker service
+      service:
+       name: docker
+       state: started
 
     - name: Install docker python module
       pip:
        name: docker
-    
-    - name: Remove all but selected list of containers
-      docker_network:
-         name: php-demo
-         connected:
-           - docker-pipeline
-           
-           
+    - name: Create a volume
+      docker_volume:
+        name: mysql-volume
+        state: present
+    - name: Create a volume
+      docker_volume:
+        name: laravel-volume
+        state: present
+
     - name: Create Application container
       docker_container:
         name: docker-pipeline
         image: anshumaria0786/laravel:V.31
         state: started
         recreate: yes
+        volumes:
+         **- laravel-volume:/var/www/html/:rw**
         published_ports:
          - "83:80"
+   
+    - name: Add a container to a network, leaving existing containers connected
+      docker_network:
+           name: laravel
+           connected:
+             - docker-pipeline
+           appends: yes
+        
