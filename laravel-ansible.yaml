@@ -1,7 +1,7 @@
 ---
 - hosts: webservers
   gather_facts: no
-  remote_user: root
+  remote_user: ubuntu
   become: yes
   tasks:
     - name: Install docker and some dependencies
@@ -33,7 +33,7 @@
         state: started
         recreate: yes
         volumes:
-         **- laravel-volume:/var/www/html/:rw**
+          - laravel-volume:/var/www/html/
         published_ports:
          - "83:80"
    
