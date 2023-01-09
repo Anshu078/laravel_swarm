@@ -1,7 +1,7 @@
 def containerName="cargoflare"
 def tag="v1.1"
 def gitURL="https://github.com/Anshu078/laravel_swarm.git"
-pipeline {
+node {
     stage('CHECKOUT') {
         checkout([$class: 'GitSCM', branches: [[name: '*/deployment']], extensions: [], userRemoteConfigs: [[credentialsId: 'cargoflare-front-app', url: 'https://github.com/Anshu078/laravel_swarm.git']]])
     }
