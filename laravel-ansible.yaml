@@ -28,8 +28,8 @@
     
     - name: Stop a container
       docker_container:
-      name: docker-pipeline
-      state: stopped
+        name: docker-pipeline
+        state: stopped
 
     - name: Create Application container
       docker_container:
