@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                     ANSHU MARIA
+                     Laravel-PIPELINE
                 </div>
 
                 <div class="links">
