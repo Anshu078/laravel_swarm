@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                     Laravel-PIPELINE
+                     LARAVEL-PIPELINE
                 </div>
 
                 <div class="links">
