@@ -32,8 +32,6 @@
         image: anshumaria0786/laravel-pipeline:v1
         state: started
         recreate: yes
-        volumes:
-          - laravel-volume:/var/www/html/
         published_ports:
          - "83:80"
    
