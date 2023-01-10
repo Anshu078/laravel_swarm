@@ -21,6 +21,5 @@ RUN apt-get update && apt-get install -y \
     --install-dir=/usr/local/bin --filename=composer
 WORKDIR /var/www/html/
 COPY . /var/www/html/
-COPY laravel.conf /etc/apache2/site-available/000-default.conf
 RUN composer install
 EXPOSE 80
