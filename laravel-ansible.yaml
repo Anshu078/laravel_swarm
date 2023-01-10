@@ -29,7 +29,7 @@
     - name: Create Application container
       docker_container:
         name: docker-pipeline
-        image: anshumaria0786/laravel:V.31
+        image: anshumaria0786/laravel-pipeline:v1
         state: started
         recreate: yes
         volumes:

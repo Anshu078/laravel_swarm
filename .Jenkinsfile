@@ -1,5 +1,5 @@
-def containerName="cargoflare"
-def tag="v1.1"
+def containerName="laravel-pipeline"
+def tag="v1"
 def gitURL="https://github.com/Anshu078/laravel_swarm.git"
 node {
     stage('CHECKOUT') {
