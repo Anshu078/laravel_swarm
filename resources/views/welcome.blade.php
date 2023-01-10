@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                     LARAVEL-PIPELINE
+                    DOCKER-PIPELINE
                 </div>
 
                 <div class="links">
