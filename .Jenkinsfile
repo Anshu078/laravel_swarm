@@ -22,7 +22,7 @@ node {
     }
 	
 	/*stage("SonarQube Scan"){
-	     withSonarQubeEnv(credentialsId: 'SonarQubeScanner1'){
+	     withSonarQubeEnv credentialsId: 'SonarQubeScanner1'){
 	        sh"${sonarscanner}/bin/sonar-scanner"
           }
     }*/
