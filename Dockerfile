@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
     --install-dir=/usr/local/bin --filename=composer
 WORKDIR /var/www/html/
 COPY . /var/www/html/
-COPY laravel.conf /etc/apache2/site-available/000-default.conf
+COPY .env.backup /var/www/html/.env
 RUN composer install
+RUN php artisan key:generate
+RUN chown www-data:www-data /var/www/html -R
 EXPOSE 80
