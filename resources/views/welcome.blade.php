@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    VICTORY-IN-PIPELINE
+                    GIT-DOCKER-DOCKER-REGISTRY-ANSIBLE
                 </div>
 
                 <div class="links">
