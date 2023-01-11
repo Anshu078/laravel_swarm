@@ -1,4 +1,4 @@
-def containerName="laravel-pipeline"
+def containerName="test"
 def tag="v1"
 def gitURL="https://github.com/Anshu078/laravel_swarm.git"
 node {
