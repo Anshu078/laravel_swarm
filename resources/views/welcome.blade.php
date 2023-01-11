@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    GIT-DOCKER-DOCKER-REGISTRY-ANSIBLE
+                    GIT-DOCKER-DOCKER-REGISTRY-JENKINS-ANSIBLE
                 </div>
 
                 <div class="links">
