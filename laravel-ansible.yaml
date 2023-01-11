@@ -26,10 +26,10 @@
         name: laravel-volume
         state: present
     
-    # - name: Stop a container
-    #   docker_container:
-    #     name: docker-pipeline
-    #     state: stopped
+    - name: Stop a container
+      docker_container:
+        name: docker-pipeline
+        state: absent
 
     - name: Create Application container
       docker_container:
