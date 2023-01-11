@@ -26,10 +26,15 @@
         name: laravel-volume
         state: present
     
-    - name: Stop a container
+    - name: remove a container
       docker_container:
         name: docker-pipeline
         state: absent
+    - name: Remove image
+      docker_image:
+        state: absent
+        name: anshumaria0786/test
+        tag: v1.1
 
     - name: Create Application container
       docker_container:
